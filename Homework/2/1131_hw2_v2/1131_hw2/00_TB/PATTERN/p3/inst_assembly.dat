@@ -1,0 +1,35 @@
+----------------------
+R-type  $rd  $r1  $r2
+I-type  $rd  $r1  im
+S-type  $r2  $r1  im
+B-type  $r1  $r2  im
+----------------------
+addi    $0     $0     1568 
+addi    $21    $21    2
+sll     $0     $0     $21
+addi    $1     $31    134
+addi    $3     $30    642
+addi    $4     $30    511
+addi    $5     $30    23
+sll     $1     $1     $5
+sll     $4     $4     $5
+sll     $3     $3     $5
+addi    $1     $1     583
+addi    $4     $4     294
+sw      $1     $0     0
+sw      $3     $0     4
+sw      $4     $0     8
+flw     $0     $0     0
+flw     $1     $0     4
+flw     $2     $0     8
+fclass  $6     $1
+fclass  $7     $2
+fclass  $8     $3
+sw      $6     $0     12
+sw      $7     $0     16
+sw      $8     $0     20
+fadd    $3     $0     $1
+fsw     $3     $0     24
+fsub    $4     $2     $1
+fsw     $4     $0     28
+eof 
